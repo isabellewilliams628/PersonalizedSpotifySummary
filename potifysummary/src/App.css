@@ -1,0 +1,5 @@
+@font-face{
+    font-family: "Jeju";
+    src: local("JejuMyeongjo-Regular"),
+        url("./Fonts/JejuMyeongjo-Regular.ttf") format("truetype");
+}
