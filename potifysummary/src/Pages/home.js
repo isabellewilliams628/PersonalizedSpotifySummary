@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './home.css';
 import background from '../Assets/gradient1.jpg';
 import star from "../Assets/stars.png";
@@ -18,6 +19,7 @@ function home() {
             <button className="loginButton">Login to Spotify</button>
             
         </div>
+
       </div>
     );
   }
