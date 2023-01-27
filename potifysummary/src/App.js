@@ -3,7 +3,8 @@ import './App.css';
 import Main from './Pages/main.js'
 import Home from './Pages/home.js'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import"./Fonts/JejuMyeongjo-Regular.ttf"
+import"./Fonts/JejuMyeongjo-Regular.ttf";
+import { gsap } from "gsap";
 
 function App() {
   return (
