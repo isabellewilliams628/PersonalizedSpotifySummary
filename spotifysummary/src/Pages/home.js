@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './home.css';
 import background from '../Assets/gradient1.jpg';
@@ -8,21 +8,9 @@ import axios from 'axios';
 import {Buffer} from 'buffer'
 
 
-function home() {
+function Home() {
 
-  function authSpotify() {
-    var client_id = "d6802b1fce6e44a78354fc3cd886d007";
-    var client_secret = "eca120030997467bb30ed871efb5a057";
-
-    axios.post('https://accounts.spotify.com/api/token', {grant_type: "client_credentials"}, {
-      headers: {
-        Authorization: "Basic " + new Buffer(client_id + ":" + client_secret).toString("base64"),
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    }).then((response) => {console.log(response.data.access_token)})
-
-  }
-  
+  let loginDirect = 'https://accounts.spotify.com/authorize?client_id=d6802b1fce6e44a78354fc3cd886d007&redirect_uri=http://localhost:3000/summary&response_type=token&scope=user-top-read%20user-read-private%20user-library-read'
     return (
       <div className="home">
         <div className="mainContent">
@@ -34,7 +22,7 @@ function home() {
             <img src={star} ></img>
             </div>
            
-            <button className="loginButton" onClick={() => authSpotify()}>Login to Spotify</button>
+            <button className="loginButton"><a href={loginDirect}>Login to Spotify</a></button>
             <Link to="/summary" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="m" >Main</div>
             </Link>
@@ -44,4 +32,4 @@ function home() {
     );
   }
   
-  export default home;
+  export default Home;
