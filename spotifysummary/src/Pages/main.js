@@ -56,6 +56,10 @@ function Main() {
     setSongs([...topSongs])
   }
   
+  const logout = () => {
+    setToken(" ")
+    window.localStorage.removeItem("token")
+  }
 
     return (
       <div className="main">
@@ -78,6 +82,9 @@ function Main() {
           </div>
         </section>
         <section className="three">
+          <div className="topBar">
+            <div className="logout">Logout</div>
+          </div>
           <div className="TopSongs">
               <div className="head">Your Top Songs of The Month</div>
               <div className="songList">
@@ -88,6 +95,7 @@ function Main() {
                 })}
               </div>
           </div>
+          
         </section>
       </div>
       
