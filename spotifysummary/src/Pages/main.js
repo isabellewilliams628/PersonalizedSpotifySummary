@@ -21,12 +21,13 @@ function Main() {
     //}
     setToken(token)
     getTopArtists(token)
+    getTopSongs(token)
 
   }, [])
 
 
   async function getTopArtists(givenToken){
-    console.log(givenToken)
+    
    let response = await axios.get("https://api.spotify.com/v1/me/top/artists", {
     headers: {
       Authorization: `Bearer ${givenToken}`
@@ -38,6 +39,21 @@ function Main() {
    }
 
    setArtists([...topArtists])
+  }
+
+  async function getTopSongs(givenToken){
+    let response = await axios.get("https://api.spotify.com/v1/me/top/tracks",{
+      headers: {
+        Authorization: `Bearer ${givenToken}`
+      },
+    })
+
+    let topSongs = []
+    for(let x = 0; x < 5; x++){
+      topSongs.push(response.data.items[x].name)
+    }
+
+    setSongs([...topSongs])
   }
   
 
@@ -65,10 +81,11 @@ function Main() {
           <div className="TopSongs">
               <div className="head">Your Top Songs of The Month</div>
               <div className="songList">
-                <div className="song"></div>
-                <div className="song"></div>
-                <div className="song"></div>
-                <div className="song"></div>
+                {songs.map((song, ind) => {
+                  return(
+                    <div key={ind} className="song">{song}</div>
+                  )
+                })}
               </div>
           </div>
         </section>
