@@ -22,9 +22,7 @@ function Home() {
             <img src={star} ></img>
             </div>
             <button className="loginButton" ><a style={{ textDecoration: 'none', color: 'inherit' }} href={loginDirect}>Login to Spotify</a></button>
-            <Link to="/summary" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div>main</div>
-            </Link>
+      
             
         </div>
 
