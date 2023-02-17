@@ -6,8 +6,8 @@ import axios from 'axios';
 function Main() {
 
   const [token, setToken] = useState("")
-  const [artists, setArtists] = useState([])
-  const [songs, setSongs] = useState([])
+  const [artists, setArtists] = useState([""])
+  const [songs, setSongs] = useState([""])
 
   useEffect( () => {
 
@@ -68,11 +68,11 @@ function Main() {
       <div className="main">
 
         <section className="one">
-            <div className="intro">Time to see your top songs and artists of the month. Scroll to begin!</div>
+            <div className="intro">Time to see your top songs and artists. Scroll to begin!</div>
         </section>
         <section className="two">
           <div className="TopArtists">
-              <div className="head">Your Top Artists of The Month</div>
+              <div className="head">Your Top Artists</div>
               <div className="artistList">
                 {artists.map((artist, index) => {
                   return(
@@ -85,11 +85,8 @@ function Main() {
           </div>
         </section>
         <section className="three">
-          <div className="topBar">
-            <div className="logout">Logout</div>
-          </div>
           <div className="TopSongs">
-              <div className="head">Your Top Songs of The Month</div>
+              <div className="head">Your Top Songs</div>
               <div className="songList">
                 {songs.map((song, ind) => {
                   return(
