@@ -12,7 +12,9 @@ function Main() {
   useEffect( () => {
 
     const hash = window.location.hash
-    let token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+    console.log(hash)
+    if(hash === " "){let token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]}
+    
 
     //if (!token && hash){
     //  token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
@@ -56,10 +58,10 @@ function Main() {
     setSongs([...topSongs])
   }
   
-  const logout = () => {
-    setToken(" ")
-    window.localStorage.removeItem("token")
-  }
+  //const logout = () => {
+  //  setToken(" ")
+ //   window.localStorage.removeItem("token")
+  //}
 
     return (
       <div className="main">

@@ -10,7 +10,7 @@ import {Buffer} from 'buffer'
 
 function Home() {
 
-  let loginDirect = 'https://accounts.spotify.com/authorize?client_id=d6802b1fce6e44a78354fc3cd886d007&redirect_uri=http://localhost3000/summary&response_type=token&scope=user-top-read%20user-read-private%20user-library-read'
+  let loginDirect = 'https://accounts.spotify.com/authorize?client_id=d6802b1fce6e44a78354fc3cd886d007&redirect_uri=https://personalizedspotifysummary.netlify.app/summary&response_type=token&scope=user-top-read%20user-read-private%20user-library-read'
     return (
       <div className="home">
         <div className="mainContent">
@@ -22,7 +22,7 @@ function Home() {
             <img src={star} ></img>
             </div>
            
-            <button className="loginButton" style={{ textDecoration: 'none', color: 'inherit' }}><a href={loginDirect}>Login to Spotify</a></button>
+            <button className="loginButton" ><a style={{ textDecoration: 'none', color: 'inherit' }} href={loginDirect}>Login to Spotify</a></button>
             <Link to="/summary" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="m" >Main</div>
             </Link>
