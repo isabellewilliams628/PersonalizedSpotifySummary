@@ -12,8 +12,9 @@ function Main() {
   useEffect( () => {
 
     const hash = window.location.hash
+    let token
     console.log(hash)
-    if(hash === " "){let token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]}
+    if(hash !== ""){token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]}
     
 
     //if (!token && hash){
